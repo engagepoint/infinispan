@@ -3,6 +3,7 @@ package org.infinispan.manager;
 import org.infinispan.Cache;
 import org.infinispan.configuration.cache.CacheMode;
 import org.infinispan.configuration.cache.ConfigurationBuilder;
+import org.infinispan.configuration.global.GlobalConfigurationBuilder;
 import org.infinispan.eviction.EvictionManager;
 import org.infinispan.eviction.EvictionStrategy;
 import org.infinispan.interceptors.BatchingInterceptor;
@@ -104,4 +105,9 @@ public class CacheManagerComponentRegistryTest extends AbstractCacheTest {
       assert !TestingUtil.extractComponent(c, InterceptorChain.class).containsInterceptorType(BatchingInterceptor.class);
       assert TestingUtil.extractComponent(overridden, InterceptorChain.class).containsInterceptorType(BatchingInterceptor.class);
    }
+   
+   public void testCreateCacheManagerGlobalConfiguration(){
+	   cm =  new DefaultCacheManager(GlobalConfigurationBuilder.defaultClusteredBuilder().build());
+   }
+   
 }
