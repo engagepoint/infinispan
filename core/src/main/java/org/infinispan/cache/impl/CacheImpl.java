@@ -829,7 +829,8 @@ public class CacheImpl<K, V> implements AdvancedCache<K, V> {
       if (keys == null || keys.isEmpty()) {
          throw new IllegalArgumentException("Cannot lock empty list of keys");
       }
-      InvocationContext ctx = getInvocationContextForWrite(explicitClassLoader, UNBOUNDED, false);
+//      InvocationContext ctx = getInvocationContextForWrite(explicitClassLoader, UNBOUNDED, false);
+      InvocationContext ctx = getInvocationContextWithImplicitTransaction(false, explicitClassLoader, UNBOUNDED);
       LockControlCommand command = commandsFactory.buildLockControlCommand(keys, explicitFlags);
       return (Boolean) invoker.invoke(ctx, command);
    }
