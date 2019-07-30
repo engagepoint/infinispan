@@ -94,17 +94,4 @@
         </modules>
      </profile>
    </profiles>
-
-   <distributionManagement>
-      <repository>
-         <id>Artifactory</id>
-         <name>Artifactory-releases</name>
-         <url>http://artifactory.legacy.hhstechgroup.com:8081/artifactory/libs-release-local</url>
-      </repository>
-      <snapshotRepository>
-         <id>Artifactory</id>
-         <name>Artifactory-snapshots</name>
-         <url>http://artifactory.legacy.hhstechgroup.com:8081/artifactory/libs-snapshot-local</url>
-      </snapshotRepository>
-   </distributionManagement>
 </project>
