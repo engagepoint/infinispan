@@ -42,7 +42,6 @@
             <module>cli</module>
             <module>build</module>
             <module>management/server-rhq-plugin</module>
-            <module>testsuite</module>
          </modules>
       </profile>
       <profile>
